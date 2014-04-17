@@ -1,6 +1,12 @@
 <p>Title: <%= @book.title %></p>
 <p>Author: <%= @book.author %></p>
+<p>Reviews: <br>
+	<%= average_review %>
+	<% @book.reviews.each do |review| %>
+	Name: <%= review.reviewer_name %><br>
+	Review: <%= review.body %><br>
+	<% end %>
+</p>
 
 <%= link_to "Back to List", books_path %> |
 <%= link_to "Edit Book", edit_book_path(@book) %>
-
